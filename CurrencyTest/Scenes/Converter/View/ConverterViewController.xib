@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConverterViewController" customModule="CurrencyTest" customModuleProvider="target">
+            <connections>
+                <outlet property="amountTextField" destination="FsR-Ad-UIr" id="XQr-WF-2TV"/>
+                <outlet property="firstCurrencyButton" destination="uOo-M2-sqT" id="2Bx-t5-KWj"/>
+                <outlet property="resultLabel" destination="0C2-Pn-iuR" id="YkJ-it-mpl"/>
+                <outlet property="secondCurrencyButton" destination="xDT-Z0-E7n" id="xvM-BP-HvO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbK-sV-E1l">
+                    <rect key="frame" x="16" y="81" width="288" height="178.5"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FsR-Ad-UIr">
+                            <rect key="frame" x="0.0" y="0.0" width="180" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOo-M2-sqT">
+                            <rect key="frame" x="188" y="0.0" width="100" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="9D0-6Q-wfg"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Choose..." backgroundImage="Button"/>
+                            <connections>
+                                <action selector="firstCurrencyButtonAction:" destination="-1" eventType="touchUpInside" id="uLI-hM-FSN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd2-su-btv">
+                            <rect key="frame" x="223" y="50" width="30" height="41"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="⇅">
+                                <color key="titleColor" red="0.2662530541" green="0.31190803649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="switchCurrencyButtonAction:" destination="-1" eventType="touchUpInside" id="8Ma-hz-3lg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDT-Z0-E7n">
+                            <rect key="frame" x="0.0" y="107" width="288" height="34"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Choose..." backgroundImage="Button"/>
+                            <connections>
+                                <action selector="secondCurrencyButtonAction:" destination="-1" eventType="touchUpInside" id="4c6-iw-uHL"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C2-Pn-iuR">
+                            <rect key="frame" x="0.0" y="157" width="288" height="21.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="xDT-Z0-E7n" firstAttribute="leading" secondItem="IbK-sV-E1l" secondAttribute="leading" id="6De-Ty-vD2"/>
+                        <constraint firstAttribute="trailing" secondItem="0C2-Pn-iuR" secondAttribute="trailing" id="8qC-1a-OE7"/>
+                        <constraint firstItem="uOo-M2-sqT" firstAttribute="height" secondItem="FsR-Ad-UIr" secondAttribute="height" id="EIe-P2-2iI"/>
+                        <constraint firstItem="0C2-Pn-iuR" firstAttribute="top" secondItem="xDT-Z0-E7n" secondAttribute="bottom" constant="16" id="JmF-X7-Vyk"/>
+                        <constraint firstItem="uOo-M2-sqT" firstAttribute="centerY" secondItem="FsR-Ad-UIr" secondAttribute="centerY" id="KBC-5H-xmF"/>
+                        <constraint firstItem="xDT-Z0-E7n" firstAttribute="height" secondItem="uOo-M2-sqT" secondAttribute="height" id="PZX-e0-TUO"/>
+                        <constraint firstItem="uOo-M2-sqT" firstAttribute="leading" secondItem="FsR-Ad-UIr" secondAttribute="trailing" constant="8" id="Q4n-tk-ObI"/>
+                        <constraint firstAttribute="trailing" secondItem="xDT-Z0-E7n" secondAttribute="trailing" id="YBy-01-GDc"/>
+                        <constraint firstAttribute="trailing" secondItem="uOo-M2-sqT" secondAttribute="trailing" id="c2K-De-RnA"/>
+                        <constraint firstItem="hd2-su-btv" firstAttribute="top" secondItem="FsR-Ad-UIr" secondAttribute="bottom" constant="16" id="cNk-uH-Qpo"/>
+                        <constraint firstItem="hd2-su-btv" firstAttribute="centerX" secondItem="uOo-M2-sqT" secondAttribute="centerX" id="gbi-Uf-9ui"/>
+                        <constraint firstAttribute="width" constant="288" id="hoC-rN-7uX"/>
+                        <constraint firstItem="FsR-Ad-UIr" firstAttribute="leading" secondItem="IbK-sV-E1l" secondAttribute="leading" id="mxZ-iX-jmF"/>
+                        <constraint firstItem="0C2-Pn-iuR" firstAttribute="leading" secondItem="IbK-sV-E1l" secondAttribute="leading" id="peq-ut-cJR"/>
+                        <constraint firstItem="FsR-Ad-UIr" firstAttribute="top" secondItem="IbK-sV-E1l" secondAttribute="top" id="qtu-U3-4pf"/>
+                        <constraint firstAttribute="bottom" secondItem="0C2-Pn-iuR" secondAttribute="bottom" id="wbE-6c-hgn"/>
+                        <constraint firstItem="xDT-Z0-E7n" firstAttribute="top" secondItem="hd2-su-btv" secondAttribute="bottom" constant="16" id="ydj-Tq-goM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="IbK-sV-E1l" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.6" id="Vlu-W3-GIg"/>
+                <constraint firstItem="IbK-sV-E1l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nJO-za-jY2"/>
+            </constraints>
+            <point key="canvasLocation" x="159.375" y="-119.36619718309859"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Button" width="16.333333969116211" height="16.333333969116211"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
