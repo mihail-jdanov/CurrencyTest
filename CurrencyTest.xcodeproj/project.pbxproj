@@ -12,6 +12,10 @@
 		8780221B28DF5EA400AF4406 /* ChooseCurrencyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780221A28DF5EA400AF4406 /* ChooseCurrencyPresenter.swift */; };
 		8780221D28DF724800AF4406 /* ChooseCurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780221C28DF724800AF4406 /* ChooseCurrencyModel.swift */; };
 		8780221F28DF79A600AF4406 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780221E28DF79A600AF4406 /* Router.swift */; };
+		8780222128E0B88900AF4406 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780222028E0B88900AF4406 /* LoaderViewController.swift */; };
+		8780222428E0CDB300AF4406 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780222328E0CDB300AF4406 /* String.swift */; };
+		8780222628E0D5B300AF4406 /* DecimalNumbersTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780222528E0D5B300AF4406 /* DecimalNumbersTextField.swift */; };
+		8780222B28E0F15900AF4406 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780222A28E0F15900AF4406 /* UIViewController.swift */; };
 		87C0D6ED28DEE0AB00BB3D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C0D6EC28DEE0AB00BB3D05 /* AppDelegate.swift */; };
 		87C0D6F628DEE0AC00BB3D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C0D6F528DEE0AC00BB3D05 /* Assets.xcassets */; };
 		87C0D6F928DEE0AC00BB3D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C0D6F728DEE0AC00BB3D05 /* LaunchScreen.storyboard */; };
@@ -27,6 +31,10 @@
 		8780221A28DF5EA400AF4406 /* ChooseCurrencyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyPresenter.swift; sourceTree = "<group>"; };
 		8780221C28DF724800AF4406 /* ChooseCurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCurrencyModel.swift; sourceTree = "<group>"; };
 		8780221E28DF79A600AF4406 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8780222028E0B88900AF4406 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		8780222328E0CDB300AF4406 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		8780222528E0D5B300AF4406 /* DecimalNumbersTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalNumbersTextField.swift; sourceTree = "<group>"; };
+		8780222A28E0F15900AF4406 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		87C0D6E928DEE0AB00BB3D05 /* CurrencyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C0D6EC28DEE0AB00BB3D05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C0D6F528DEE0AC00BB3D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +66,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8780222228E0CDA400AF4406 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8780222328E0CDB300AF4406 /* String.swift */,
+				8780222A28E0F15900AF4406 /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8780222928E0DDF000AF4406 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				8780222528E0D5B300AF4406 /* DecimalNumbersTextField.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 		87C0D6E028DEE0AB00BB3D05 = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +104,9 @@
 			children = (
 				87C0D6EC28DEE0AB00BB3D05 /* AppDelegate.swift */,
 				8780221E28DF79A600AF4406 /* Router.swift */,
+				8780222228E0CDA400AF4406 /* Extensions */,
 				87C0D70028DF300800BB3D05 /* Scenes */,
+				8780222928E0DDF000AF4406 /* Custom Views */,
 				87C0D6F528DEE0AC00BB3D05 /* Assets.xcassets */,
 				87C0D6F728DEE0AC00BB3D05 /* LaunchScreen.storyboard */,
 				87C0D6FA28DEE0AC00BB3D05 /* Info.plist */,
@@ -92,6 +119,7 @@
 			children = (
 				87C0D70D28DF5C9100BB3D05 /* ChooseCurrency */,
 				87C0D70128DF300E00BB3D05 /* Converter */,
+				8780222028E0B88900AF4406 /* LoaderViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -197,11 +225,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8780222B28E0F15900AF4406 /* UIViewController.swift in Sources */,
 				8780221F28DF79A600AF4406 /* Router.swift in Sources */,
 				8780221B28DF5EA400AF4406 /* ChooseCurrencyPresenter.swift in Sources */,
+				8780222428E0CDB300AF4406 /* String.swift in Sources */,
 				8780221828DF5E5600AF4406 /* ChooseCurrencyViewController.swift in Sources */,
 				87C0D70328DF301F00BB3D05 /* ConverterPresenter.swift in Sources */,
+				8780222128E0B88900AF4406 /* LoaderViewController.swift in Sources */,
 				8780221D28DF724800AF4406 /* ChooseCurrencyModel.swift in Sources */,
+				8780222628E0D5B300AF4406 /* DecimalNumbersTextField.swift in Sources */,
 				87C0D70B28DF317100BB3D05 /* ConverterViewController.swift in Sources */,
 				87C0D70528DF305000BB3D05 /* ConverterModel.swift in Sources */,
 				87C0D6ED28DEE0AB00BB3D05 /* AppDelegate.swift in Sources */,

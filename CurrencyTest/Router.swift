@@ -14,12 +14,17 @@ protocol IRouter: AnyObject {
     func presentInitial()
     func presentChooseCurrency(model: IChooseCurrencyModel, chooseHandler: ((String) -> Void)?)
     func closeCurrentController()
+    func presentLoader(animated: Bool)
+    func dismissLoader(animated: Bool)
+    func presentFetchFailedAlert(errorText: String, retryHandler: (() -> Void)?, closeHandler: (() -> Void)?)
     
 }
 
 class Router: IRouter {
     
     let navigationController: UINavigationController?
+    
+    private var presentedLoader: UIViewController?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -47,6 +52,44 @@ class Router: IRouter {
     
     func closeCurrentController() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func presentLoader(animated: Bool) {
+        DispatchQueue.main.async {
+            guard self.presentedLoader == nil else { return }
+            let viewController = LoaderViewController()
+            viewController.modalTransitionStyle = .crossDissolve
+            viewController.modalPresentationStyle = .overFullScreen
+            self.navigationController?.present(viewController, animated: animated, completion: nil)
+            self.presentedLoader = viewController
+        }
+    }
+    
+    func dismissLoader(animated: Bool) {
+        DispatchQueue.main.async {
+            self.presentedLoader?.dismiss(animated: animated, completion: nil)
+            self.presentedLoader = nil
+        }
+    }
+    
+    func presentFetchFailedAlert(errorText: String, retryHandler: (() -> Void)?, closeHandler: (() -> Void)?) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(
+                title: "Error",
+                message: errorText,
+                preferredStyle: .alert
+            )
+            let retryAction = UIAlertAction(title: "Retry", style: .default) { action in
+                retryHandler?()
+            }
+            let closeAction = UIAlertAction(title: "Close", style: .cancel) { action in
+                closeHandler?()
+            }
+            if retryHandler != nil { alertController.addAction(retryAction) }
+            if closeHandler != nil { alertController.addAction(closeAction) }
+            alertController.preferredAction = alertController.actions.first
+            UIViewController.topViewController()?.present(alertController, animated: true, completion: nil)
+        }
     }
     
 }

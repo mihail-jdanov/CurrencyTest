@@ -8,14 +8,18 @@
 import UIKit
 
 protocol IConverterView: AnyObject {
-    
+        
     func setFirstCurrency(_ currency: String?)
+    func setSecondCurrency(_ currency: String?)
+    func showResult(_ value: Double?)
     
 }
 
 class ConverterViewController: UIViewController, IConverterView {
     
     var presenter: IConverterPresenter?
+    
+    private let defaultCurrencyButtonTitle = "Choose..."
     
     @IBOutlet private weak var amountTextField: UITextField!
     @IBOutlet private weak var firstCurrencyButton: UIButton!
@@ -28,7 +32,20 @@ class ConverterViewController: UIViewController, IConverterView {
     }
     
     func setFirstCurrency(_ currency: String?) {
-        firstCurrencyButton.setTitle(currency ?? "Choose...", for: .normal)
+        firstCurrencyButton.setTitle(currency ?? defaultCurrencyButtonTitle, for: .normal)
+        secondCurrencyButton.isEnabled = currency != nil
+    }
+    
+    func setSecondCurrency(_ currency: String?) {
+        secondCurrencyButton.setTitle(currency ?? defaultCurrencyButtonTitle, for: .normal)
+    }
+    
+    func showResult(_ value: Double?) {
+        guard let value = value else {
+            resultLabel.text = " "
+            return
+        }
+        resultLabel.text = "Result: \(value)"
     }
 
 }
@@ -37,7 +54,7 @@ class ConverterViewController: UIViewController, IConverterView {
 private extension ConverterViewController {
     
     @IBAction func amountTextFieldAction(_ sender: Any) {
-        
+        presenter?.applyAmount(from: amountTextField.text ?? "")
     }
     
     @IBAction func firstCurrencyButtonAction(_ sender: Any) {

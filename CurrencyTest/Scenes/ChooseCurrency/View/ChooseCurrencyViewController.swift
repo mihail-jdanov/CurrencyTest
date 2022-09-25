@@ -7,11 +7,7 @@
 
 import UIKit
 
-protocol IChooseCurrencyView: AnyObject {
-    
-    
-    
-}
+protocol IChooseCurrencyView: AnyObject {}
 
 class ChooseCurrencyViewController: UIViewController, IChooseCurrencyView {
     
