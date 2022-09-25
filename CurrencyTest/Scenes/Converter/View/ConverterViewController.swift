@@ -11,7 +11,7 @@ protocol IConverterView: AnyObject {
         
     func setFirstCurrency(_ currency: String?)
     func setSecondCurrency(_ currency: String?)
-    func showResult(_ value: Double?)
+    func showResult(_ value: String?)
     
 }
 
@@ -40,12 +40,12 @@ class ConverterViewController: UIViewController, IConverterView {
         secondCurrencyButton.setTitle(currency ?? defaultCurrencyButtonTitle, for: .normal)
     }
     
-    func showResult(_ value: Double?) {
+    func showResult(_ value: String?) {
         guard let value = value else {
             resultLabel.text = " "
             return
         }
-        resultLabel.text = "Result: \(value)"
+        resultLabel.text = "Result: " + value
     }
 
 }

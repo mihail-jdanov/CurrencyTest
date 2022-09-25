@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IbK-sV-E1l">
-                    <rect key="frame" x="16" y="81" width="288" height="178.5"/>
+                    <rect key="frame" x="16" y="124" width="288" height="178.5"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FsR-Ad-UIr" customClass="DecimalNumbersTextField" customModule="CurrencyTest" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="180" height="34"/>
@@ -96,7 +96,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="IbK-sV-E1l" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.6" id="Vlu-W3-GIg"/>
+                <constraint firstItem="IbK-sV-E1l" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.75" id="Vlu-W3-GIg"/>
                 <constraint firstItem="IbK-sV-E1l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nJO-za-jY2"/>
             </constraints>
             <point key="canvasLocation" x="159.375" y="-119.36619718309859"/>

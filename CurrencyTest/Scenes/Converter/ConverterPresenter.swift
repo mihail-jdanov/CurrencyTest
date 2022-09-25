@@ -89,7 +89,8 @@ class ConverterPresenter: IConverterPresenter {
             return
         }
         let result = model.convert(value: doubleValue, ofCurrency: firstCurrency, toCurrency: secondCurrency)
-        view?.showResult(result)
+        let resultString = String(format: "%.3f", locale: Locale.current, result)
+        view?.showResult(resultString)
     }
     
     private func startDataFetch() {

@@ -30,8 +30,8 @@ class ConverterModel: IConverterModel {
     
     private let urlSession: URLSession = {
         let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForRequest = 5
-        configuration.timeoutIntervalForResource = 5
+        configuration.timeoutIntervalForRequest = 10
+        configuration.timeoutIntervalForResource = 10
         configuration.requestCachePolicy = .reloadIgnoringCacheData
         return URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
     }()
